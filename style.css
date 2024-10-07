@@ -42,6 +42,7 @@ header.scrolled {
 .logo-title {
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 
 .logo {
@@ -51,7 +52,17 @@ header.scrolled {
 
 .logo-title h1 {
     font-size: 24px;
-    color: #fff;
+    color: #fff; /* Setzt die Farbe des Titels auf Weiß */
+    margin: 0;   /* Entfernt Standardmargins für eine konsistente Ausrichtung */
+}
+
+.logo-title a {
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    color: inherit; /* Übernimmt die Farbe vom Eltern-Element */
+}
+
+.logo-title a:hover {
+    color: #ccc; /* Ändert die Farbe bei Hover auf ein helleres Grau */
 }
 
 /* Navigation-Stile */
