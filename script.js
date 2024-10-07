@@ -79,27 +79,43 @@ document.addEventListener('DOMContentLoaded', () => {
             body: formData,
             headers: { 'Accept': 'application/json' }
         })
-        .then(response => response.text().then(text => ({
-            status: response.status,
-            text: text
-        })))
-        .then(result => {
-            formMessages.textContent = result.text;
-            formMessages.style.color = result.status === 200 ? 'green' : 'red';
-            if (result.status === 200) form.reset();
-        })
-        .catch(() => {
-            formMessages.textContent = 'Es gab ein Problem beim Senden des Formulars.';
-            formMessages.style.color = 'red';
+            .then(response => response.text().then(text => ({
+                status: response.status,
+                text: text
+            })))
+            .then(result => {
+                formMessages.textContent = result.text;
+                formMessages.style.color = result.status === 200 ? 'green' : 'red';
+                if (result.status === 200) form.reset();
+            })
+            .catch(() => {
+                formMessages.textContent = 'Es gab ein Problem beim Senden des Formulars.';
+                formMessages.style.color = 'red';
+            });
+    });
+});
+
+// Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    // Menü-Umschaltfunktion für das Hamburger-Icon
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
+    });
+
+    // Schließen der Navigation, wenn ein Link geklickt wird
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("nav-open");
         });
     });
 });
 
-// Menü-Umschaltfunktion für mobile Ansicht
-const menuToggle = document.querySelector('.menu-toggle');
-menuToggle.addEventListener('click', () => {
-    header.classList.toggle('nav-open');
-});document.addEventListener('DOMContentLoaded', () => {
+// Animation beim Scrollen
+document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.animate');
 
     const observer = new IntersectionObserver((entries) => {

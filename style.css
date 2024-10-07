@@ -250,7 +250,25 @@ section h2 {
     transition: background-color 0.3s;
     animation: fadeIn 1.5s ease-out;
 }
+/* Responsive Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .landing-content {
+        padding: 0 10px;
+    }
 
+    .landing-content h2 {
+        font-size: 8vw; /* Relative Größe für mobile Geräte */
+    }
+
+    .landing-content p {
+        font-size: 5vw; /* Relative Größe für mobile Geräte */
+    }
+
+    .landing-content .button {
+        font-size: 4vw; /* Kleinere, responsive Größe für den Button */
+        padding: 10px 20px;
+    }
+}
 /* Hover-Effekt für den Button auf der Landingpage */
 .landing-content .button:hover {
     background-color: #ccc;
