@@ -9,13 +9,13 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #fff;
-    background-color: hwb(0 15% 85%);
+    background-color: #000;
     scroll-behavior: smooth;
 }
 
 /* Header-Stile */
 header {
-    background-color: #000000;
+    background-color: #000;
     position: fixed;
     top: 0;
     width: 100%;
@@ -144,7 +144,7 @@ nav a:hover {
         left: 0;
         width: 100%;
         background-color: #000;
-        border-top: 1px solid #333;
+        border-top: 1px solid #000;
         opacity: 0;
         transform: translateY(-20px);
         transition: opacity 0.3s ease, transform 0.3s ease;
