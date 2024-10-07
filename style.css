@@ -11,6 +11,7 @@ body {
     color: #fff;
     background-color: #000;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Overflow horizontal verhindern */
 }
 
 /* Header-Stile */
@@ -20,7 +21,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-  
     transition: top 0.3s;
 }
 
@@ -30,6 +30,7 @@ header .container {
     align-items: center;
     padding: 10px 20px;
 }
+
 header {
     background-color: transparent;
     transition: background-color 0.3s, top 0.3s;
@@ -39,6 +40,7 @@ header {
 header.scrolled {
     background-color: #000;
 }
+
 .logo-title {
     display: flex;
     align-items: center;
@@ -52,20 +54,19 @@ header.scrolled {
 
 .logo-title h1 {
     font-size: 24px;
-    color: #fff; /* Setzt die Farbe des Titels auf Weiß */
-    margin: 0;   /* Entfernt Standardmargins für eine konsistente Ausrichtung */
+    color: #fff;
+    margin: 0;
 }
 
 .logo-title a {
-    text-decoration: none; /* Entfernt die Unterstreichung des Links */
-    color: inherit; /* Übernimmt die Farbe vom Eltern-Element */
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-title a:hover {
-    color: #ccc; /* Ändert die Farbe bei Hover auf ein helleres Grau */
+    color: #ccc;
 }
 
-/* Navigation-Stile */
 /* Navigation-Stile */
 nav {
     display: flex;
@@ -109,18 +110,10 @@ nav a:hover {
 }
 
 /* Mobile Navigation-Stile */
-/* Menü-Icon-Stil für Desktop und Mobile */
 .menu-toggle {
-    display: none; /* Standardmäßig ausgeblendet */
+    display: none;
 }
 
-/* Mobile Navigation */
-/* Menü-Icon-Stil */
-.menu-toggle {
-    display: none; /* Standardmäßig ausgeblendet */
-}
-
-/* Mobile Navigation */
 @media (max-width: 768px) {
     .container {
         position: relative;
@@ -141,12 +134,10 @@ nav a:hover {
         transition: transform 0.3s ease;
     }
 
-    /* Hamburger-Menü-Animation - wird zu einem "X" */
     .nav-open .menu-toggle {
         transform: rotate(90deg);
     }
 
-    /* Navigation ist standardmäßig ausgeblendet und kommt animiert von oben */
     nav ul {
         display: none;
         flex-direction: column;
@@ -161,7 +152,6 @@ nav a:hover {
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* Zeigt die Navigation mit einer Einblend-Animation */
     header.nav-open nav ul {
         display: flex;
         opacity: 1;
@@ -214,6 +204,7 @@ section h2 {
     object-fit: cover;
     z-index: -1;
 }
+
 .landing-content {
     position: relative;
     z-index: 1;
@@ -221,11 +212,13 @@ section h2 {
     padding: 0 20px;
     top: 50%;
     transform: translateY(-50%);
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .landing-content .landing-logo {
-    width: 120px; /* Logo-Größe anpassen */
-    margin-bottom: 20px; /* Abstand zum Titel */
+    width: 120px;
+    margin-bottom: 20px;
 }
 
 .landing-content h2 {
@@ -241,6 +234,7 @@ section h2 {
     color: #ccc;
     animation: fadeInUp 1s ease-out;
 }
+
 .landing-content .button {
     background-color: #fff;
     color: #000;
@@ -251,6 +245,7 @@ section h2 {
     transition: background-color 0.3s;
     animation: fadeIn 1.5s ease-out;
 }
+
 /* Responsive Anpassungen für mobile Geräte */
 @media (max-width: 768px) {
     .landing-content {
@@ -258,18 +253,19 @@ section h2 {
     }
 
     .landing-content h2 {
-        font-size: 8vw; /* Relative Größe für mobile Geräte */
+        font-size: 8vw;
     }
 
     .landing-content p {
-        font-size: 5vw; /* Relative Größe für mobile Geräte */
+        font-size: 5vw;
     }
 
     .landing-content .button {
-        font-size: 4vw; /* Kleinere, responsive Größe für den Button */
+        font-size: 4vw;
         padding: 10px 20px;
     }
 }
+
 /* Hover-Effekt für den Button auf der Landingpage */
 .landing-content .button:hover {
     background-color: #ccc;
